@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Login from './pages/Login';
+import MainScreen from './pages/MainScreen';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+
 import './App.css';
 
 function App() {
+  const [username, setUsername] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <h1>CodeLeap</h1>
+      <Routes>
+        <Route exact path='/' element={<Login username={username} setUsername={setUsername} />} />
+        <Route exact path='/codeleap-network' element={<MainScreen username={username} />} />
+      </Routes>
+    </Router>
   );
 }
 
