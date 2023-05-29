@@ -8,6 +8,7 @@ const MainScreen = ({username, handleChange}) => {
   const [content, setContent] = useState('')
   const [disabled, setDisabled] = useState(true)
   const [posts, setPosts] = useState([])
+  const [buttons, setButtons] = useState(false)
 
   useEffect(() => {
     const notEmpty = () => {
@@ -16,13 +17,22 @@ const MainScreen = ({username, handleChange}) => {
       }
     }
     notEmpty()
+
+    const verifyUsername = () => {
+      if (username === posts.username) {
+        setButtons(true)
+      }
+    }
+    verifyUsername()
   })
+
+
 
   const handleClick = () => {
     const post = {title, content, username}
 
     if (disabled === false) {
-      setPosts(oldPost => [<Post posts={post} time={(<ReactTimeAgo date={new Date()} locale="en-US" />)} />, ...oldPost])
+      setPosts(oldPost => [<Post posts={post} time={(<ReactTimeAgo date={new Date()} locale="en-US" />)} buttons={buttons} />, ...oldPost])
     }
   }
 
