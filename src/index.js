@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TimeAgo from "javascript-time-ago";
-import pt from 'javascript-time-ago/locale/pt.json'
+import en from 'javascript-time-ago/locale/en.json'
 
-TimeAgo.addLocale(pt)
+TimeAgo.addLocale(en)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

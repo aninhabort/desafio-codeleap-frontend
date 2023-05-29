@@ -22,7 +22,7 @@ const MainScreen = ({username, handleChange}) => {
     const post = {title, content, username}
 
     if (disabled === false) {
-      setPosts(oldPost => [<Post posts={post} time={(<ReactTimeAgo date={new Date()} locale="pt-BR" />)} />, ...oldPost])
+      setPosts(oldPost => [<Post posts={post} time={(<ReactTimeAgo date={new Date()} locale="en-US" />)} />, ...oldPost])
     }
   }
 
