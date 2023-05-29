@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CreatePost from "../components/CreatePost";
 import Post from "../components/Post";
+import ReactTimeAgo from "react-time-ago";
 
 const MainScreen = ({username, handleChange}) => {
   const [title, setTitle] = useState('')
@@ -19,8 +20,9 @@ const MainScreen = ({username, handleChange}) => {
 
   const handleClick = () => {
     const post = {title, content, username}
+
     if (disabled === false) {
-      setPosts(oldPost => [<Post posts={post} />, ...oldPost])
+      setPosts(oldPost => [<Post posts={post} time={(<ReactTimeAgo date={new Date()} locale="pt-BR" />)} />, ...oldPost])
     }
   }
 
