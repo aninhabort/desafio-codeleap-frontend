@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({username, setUsername}) => {
+const Login = ({username, setUsername, handleChange}) => {
   const [disabled, setDisabled] = useState(true)
   const navigate = useNavigate();
 
@@ -13,11 +13,6 @@ const Login = ({username, setUsername}) => {
     }
     buttonDisabled()
   })
-
-  const handleChange = (param, e) => {
-    const { value } = e.target;
-    param(value);
-  }
 
   const handleClick = () => {
     navigate('/codeleap-network')

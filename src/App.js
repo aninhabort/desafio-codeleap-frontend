@@ -8,12 +8,17 @@ import './App.css';
 function App() {
   const [username, setUsername] = useState('');
 
+  const handleChange = (param, e) => {
+    const { value } = e.target;
+    param(value);
+  }
+
   return (
     <Router>
       <h1>CodeLeap</h1>
       <Routes>
-        <Route exact path='/' element={<Login username={username} setUsername={setUsername} />} />
-        <Route exact path='/codeleap-network' element={<MainScreen username={username} />} />
+        <Route exact path='/' element={<Login username={username} setUsername={setUsername} handleChange={handleChange} />} />
+        <Route exact path='/codeleap-network' element={<MainScreen username={username} handleChange={handleChange} />} />
       </Routes>
     </Router>
   );

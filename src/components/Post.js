@@ -1,12 +1,12 @@
 import React from "react";
 
-const Post = ({postTitle, username, content}) => {
+const Post = ({posts}) => {
   return (
     <div>
-      <h2>{postTitle}</h2>
-      <p>{username}</p>
+      <h2>{posts.title}</h2>
+      <p>@{posts.username}</p>
       {/* <p>{time} minutes ago</p> */}
-      <p>{content}</p>
+      <p>{posts.content}</p>
     </div>
   )
 }
