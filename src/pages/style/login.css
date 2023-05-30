@@ -12,7 +12,8 @@ body {
   border-radius: 8px;
   display: flex;
   flex-flow: wrap;
-  margin: 400px;
+  margin: auto;
+  margin-top: 400px;
   width: 350px;
   justify-content: flex-end;
 }
