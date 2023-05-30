@@ -1,5 +1,7 @@
 import React from "react";
 
+import './style/createPost.css'
+
 const CreatePost = ({ handleChange, setTitle, setContent, disabled, handleClick, title, content }) => {
   return (
     <div className="create">

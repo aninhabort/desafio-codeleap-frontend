@@ -1,0 +1,55 @@
+.create {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  display: flex;
+  flex-flow: wrap;
+  margin: 15px;
+  padding: 12px;
+  justify-content: flex-end;
+}
+
+.main-title {
+  margin-bottom: 10px;
+}
+
+.input {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.main-label {
+  font-size: 15px;
+}
+
+.main-input {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  height: 20px;
+  margin-top: 5px;
+  margin-bottom: 12px;
+  width: 510px;
+}
+
+.textarea {
+  height: 50px;
+  resize: none;
+}
+
+.main-input::placeholder {
+  color: #cccccc;
+}
+
+.main-button-create {
+  background-color: #7695ec;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 5px 20px;
+  margin-top: 16px;
+  margin-right: 12px;
+  margin-bottom: 10px;
+}
+
+.main-button-create:disabled {
+  background-color: #cccccc;
+}

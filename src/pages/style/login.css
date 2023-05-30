@@ -51,3 +51,7 @@ body {
   margin-right: 12px;
   margin-bottom: 12px;
 }
+
+.login-button-enter:disabled {
+  background-color: #cccccc;
+}
