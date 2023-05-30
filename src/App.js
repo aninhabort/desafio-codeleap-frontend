@@ -17,8 +17,25 @@ function App() {
     <Router>
       <h1>CodeLeap</h1>
       <Routes>
-        <Route exact path='/' element={<Login username={username} setUsername={setUsername} handleChange={handleChange} />} />
-        <Route exact path='/codeleap-network' element={<MainScreen username={username} handleChange={handleChange} />} />
+        <Route
+          exact
+          path='/'
+          element={
+            <Login
+              username={username}
+              setUsername={setUsername}
+              handleChange={handleChange} />
+          }
+        />
+        <Route
+          exact
+          path='/codeleap-network'
+          element={
+            <MainScreen
+              username={username}
+              handleChange={handleChange} />
+          }
+        />
       </Routes>
     </Router>
   );

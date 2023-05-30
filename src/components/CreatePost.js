@@ -5,7 +5,10 @@ const CreatePost = ({ handleChange, setTitle, setContent, disabled, handleClick 
     <div>
       <h4>What’s on your mind?</h4>
       <label>Title
-        <input type="text" placeholder="Hello world" onChange={(e) => handleChange(setTitle, e)}></input>
+        <input
+          type="text"
+          placeholder="Hello world"
+          onChange={(e) => handleChange(setTitle, e)}></input>
       </label>
       <label>Content
         <textarea placeholder="Content here" onChange={(e) => handleChange(setContent, e)}></textarea>

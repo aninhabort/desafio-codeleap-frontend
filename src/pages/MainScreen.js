@@ -3,7 +3,7 @@ import CreatePost from "../components/CreatePost";
 import Post from "../components/Post";
 import ReactTimeAgo from "react-time-ago";
 
-const MainScreen = ({username, handleChange}) => {
+const MainScreen = ({ username, handleChange }) => {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [disabled, setDisabled] = useState(true)
@@ -29,17 +29,25 @@ const MainScreen = ({username, handleChange}) => {
 
 
   const handleClick = () => {
-    const post = {title, content, username}
+    const post = { title, content, username }
 
-    if (disabled === false) {
-      setPosts(oldPost => [<Post posts={post} time={(<ReactTimeAgo date={new Date()} locale="en-US" />)} buttons={buttons} />, ...oldPost])
+    if (!disabled) {
+      const reactTimeAgo = (<ReactTimeAgo date={new Date()} locale="en-US" />)
+      const postPage = <Post posts={post} time={reactTimeAgo} buttons={buttons} />
+      setPosts(oldPost => [postPage, ...oldPost])
     }
   }
 
   return (
     <div>
       <h4>CodeLeap Network</h4>
-      <CreatePost handleChange={handleChange} setTitle={setTitle} setContent={setContent} disabled={disabled} handleClick={handleClick} />
+      <CreatePost
+        handleChange={handleChange}
+        setTitle={setTitle}
+        setContent={setContent}
+        disabled={disabled}
+        handleClick={handleClick}
+      />
       {posts}
     </div>
   )
