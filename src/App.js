@@ -15,7 +15,6 @@ function App() {
 
   return (
     <Router>
-      <h1>CodeLeap</h1>
       <Routes>
         <Route
           exact

@@ -1,11 +1,11 @@
 import React from "react";
 
-const Post = ({ posts, time, buttons }) => {
+const Post = ({ posts, time, buttons, handleClick }) => {
   return (
     <div>
       <h2>{posts.title}</h2>
       <button hidden={buttons} type="button">edit</button>
-      <button hidden={buttons} type="button">remove</button>
+      <button hidden={buttons} type="button" onClick={handleClick}>remove</button>
       <p>@{posts.username}</p>
       <p>{time}</p>
       <p>{posts.content}</p>
