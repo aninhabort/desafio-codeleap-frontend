@@ -3,8 +3,6 @@ import Login from './pages/Login';
 import MainScreen from './pages/MainScreen';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-import './App.css';
-
 function App() {
   const [username, setUsername] = useState('');
 

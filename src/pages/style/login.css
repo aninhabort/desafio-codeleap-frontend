@@ -1,0 +1,52 @@
+* {
+  font-family: "Roboto";
+}
+
+body {
+  background-color: #dddddd;
+  color: black;
+}
+
+.login {
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-flow: wrap;
+  margin: 400px;
+  width: 350px;
+  justify-content: flex-end;
+}
+
+.login-label {
+  margin: 12px;
+  font-size: 15px;
+}
+
+.login-title {
+  margin: 12px;
+}
+
+.login-input-username {
+  margin-left: 12px;
+  margin-right: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  height: 20px;
+  margin-top: 5px;
+  width: 320px;
+}
+
+.login-input-username::placeholder {
+  color: #cccccc;
+}
+
+.login-button-enter {
+  background-color: #7695ec;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  padding: 5px 20px;
+  margin-top: 16px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}

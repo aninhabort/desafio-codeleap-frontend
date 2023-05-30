@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import './style/login.css'
+
 const Login = ({ username, setUsername, handleChange }) => {
   const [disabled, setDisabled] = useState(true)
   const navigate = useNavigate();
@@ -19,19 +21,23 @@ const Login = ({ username, setUsername, handleChange }) => {
   }
 
   return (
-    <div>
-      <h4>Welcome to CodeLeap network!</h4>
-      <label htmlFor="username">Please enter your username
-        <input
-          type="text"
-          className="username-login"
-          name="username"
-          onChange={(e) => handleChange(setUsername, e)}
-          placeholder="John doe"
-        />
-      </label>
-      <button type="button" onClick={handleClick} disabled={disabled}>ENTER</button>
-    </div>
+    <body>
+      <div className="login">
+        <div>
+          <h4 className="login-title">Welcome to CodeLeap network!</h4>
+          <label className="login-label" htmlFor="username">Please enter your username
+          </label>
+          <input
+            type="text"
+            className="login-input-username"
+            name="username"
+            onChange={(e) => handleChange(setUsername, e)}
+            placeholder="John doe"
+          />
+        </div>
+        <button className="login-button-enter" type="button" onClick={handleClick} disabled={disabled}>ENTER</button>
+      </div>
+    </body>
   )
 }
 
