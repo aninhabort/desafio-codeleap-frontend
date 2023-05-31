@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CreatePost from "../components/CreatePost";
 import Post from "../components/Post";
 import ReactTimeAgo from "react-time-ago";
-import DeleteAlert from "../components/DeleteAlert";
+import { v4 as uuidv4 } from 'uuid';
 
 import './style/mainScreen.css'
 
@@ -12,9 +12,6 @@ const MainScreen = ({ username, handleChange }) => {
   const [disabled, setDisabled] = useState(true)
   const [posts, setPosts] = useState([])
   const [buttons, setButtons] = useState(false)
-  const [displayConfirmationModal, setDisplayConfirmationModal] = useState(false);
-  const [id, setId] = useState(0)
-  const [remove, setRemove] = useState(0)
 
   useEffect(() => {
     const notEmpty = () => {
@@ -32,14 +29,9 @@ const MainScreen = ({ username, handleChange }) => {
     verifyUsername()
   })
 
-  const showDeleteModal = () => {
-    setDisplayConfirmationModal(true)
-  }
-
   const handleClick = () => {
+    const id = uuidv4()
     const post = { title, content, username, id }
-
-    setId(id + 1)
     setPosts(oldPost => [post, ...oldPost])
 
     setTitle('')
@@ -47,17 +39,28 @@ const MainScreen = ({ username, handleChange }) => {
     setDisabled(true)
   }
 
-  const hideConfirmationModal = () => {
-    setDisplayConfirmationModal(false);
-  };
-
-  const submitDelete = (num) => {
-    const newPosts = posts.filter((item) => item.id !== num)
-
+  const submitDelete = (id) => {
+    const newPosts = posts.filter((item) => item.id !== id)
     setPosts(newPosts)
-    setDisplayConfirmationModal(false)
-    setRemove(id)
   }
+
+  const submitEdit = (newTitle, newContent, username, id) => {
+    if (newTitle && newContent) {
+      const postIndex = posts.findIndex(post => post.id === id);
+      if (postIndex !== -1) {
+        const updatedPost = {
+          id,
+          title:newTitle,
+          username,
+          content:newContent,
+        };
+  
+        const updatedPosts = [...posts];
+        updatedPosts[postIndex] = updatedPost;
+        setPosts(updatedPosts);
+      }
+    }
+  };
 
   return (
     <header>
@@ -73,10 +76,19 @@ const MainScreen = ({ username, handleChange }) => {
         title={title}
         content={content}
       />
-      {posts.map((item) =>
-        <Post key={item.id} posts={item} time={(<ReactTimeAgo date={new Date()} locale="en-US" />)} buttons={buttons} handleClick={showDeleteModal} />
+      {posts?.map((item) =>
+        <Post
+          key={item.id}
+          post={item}
+          time={(<ReactTimeAgo
+            date={new Date()} locale="en-US" />)}
+          buttons={buttons}
+          setPosts={setPosts}
+          submitDelete={submitDelete}
+          submitEdit={submitEdit}
+          handleChange={handleChange}
+        />
       )}
-      {<DeleteAlert show={displayConfirmationModal} confirmModal={() => submitDelete(remove)} hideModal={hideConfirmationModal} />}
     </header>
   )
 }
