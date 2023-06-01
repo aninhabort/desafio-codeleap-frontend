@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CreatePost from "../components/CreatePost";
 import Post from "../components/Post";
-import ReactTimeAgo from "react-time-ago";
 import { v4 as uuidv4 } from 'uuid';
 
 import './style/mainScreen.css'
@@ -31,7 +30,8 @@ const MainScreen = ({ username, handleChange }) => {
 
   const handleClick = () => {
     const id = uuidv4()
-    const post = { title, content, username, id }
+    const post = { title, content, username, id, createdAt: new Date()
+     }
     setPosts(oldPost => [post, ...oldPost])
 
     setTitle('')
@@ -53,6 +53,7 @@ const MainScreen = ({ username, handleChange }) => {
           title:newTitle,
           username,
           content:newContent,
+          createdAt: new Date()
         };
   
         const updatedPosts = [...posts];
@@ -80,8 +81,6 @@ const MainScreen = ({ username, handleChange }) => {
         <Post
           key={item.id}
           post={item}
-          time={(<ReactTimeAgo
-            date={new Date()} locale="en-US" />)}
           buttons={buttons}
           setPosts={setPosts}
           submitDelete={submitDelete}
