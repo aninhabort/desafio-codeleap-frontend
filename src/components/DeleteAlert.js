@@ -8,11 +8,11 @@ const DeleteAlert = ({ show, hideModal, confirmModal}) => {
             <Modal.Header>
                 <Modal.Title>Are you sure you want to delete this item?</Modal.Title>
             </Modal.Header>
-            <Modal.Footer dialogClassName="delete-footer">
-                <Button className="alert-button-cancel button-alert-box" variant="secondary" onClick={hideModal}>
+            <Modal.Footer>
+                <Button className="btn btn-light btn-outline-secondary" onClick={hideModal}>
                     Close
                 </Button>
-                <Button className="alert-button-delete button-alert-box" variant="primary" onClick={confirmModal}>
+                <Button className="btn btn-danger" onClick={confirmModal}>
                     Delete
                 </Button>
             </Modal.Footer>

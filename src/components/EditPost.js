@@ -9,36 +9,40 @@ const EditPost = ({ show, hideModal, submitEdit, username, id, handleChange }) =
     const [newContent, setNewContent] = useState('')
 
     return (
-        <Modal show={show} onHide={hideModal} centered dialogClassName="alert-box">
-            <Modal.Header>
-                <Modal.Title>Edit item</Modal.Title>
+        <Modal show={show} onHide={hideModal} centered dialogClassName="modal-dialog modal-dialog-centered">
+            <Modal.Header dialogClassName='modal-header'>
+                <Modal.Title dialogClassName='modal-title'>Edit item</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
-                <div className="input">
-                    <label htmlFor="title">Title
+            <Modal.Body dialogClassName='modal-body'>
+                <form>
+                    <div className="mb-3">
+                        <label htmlFor="title" className="col-form-label">Title:
+                        </label>
                         <input
-                            className="edit-alert-input"
+                            className="form-control input-alert-box"
                             type="text"
                             placeholder="Hello world"
                             name="title"
                             onChange={(e) => handleChange(setNewTitle, e)}
                             value={newTitle}></input>
-                    </label>
-                    <label className="main-label" htmlFor="content">Content
+                    </div>
+                    <div className="mb-3">
+                        <label className="col-form-label" htmlFor="content">Content:
+                        </label>
                         <textarea
                             name="content"
-                            className="edit-alert-input textarea"
+                            className="form-control textarea input-alert-box"
                             placeholder="Content here"
                             onChange={(e) => handleChange(setNewContent, e)}
                             value={newContent}></textarea>
-                    </label>
-                </div>
+                    </div>
+                </form>
             </Modal.Body>
-            <Modal.Footer>
-                <Button className="alert-button-cancel button-alert-box" variant="secondary" onClick={hideModal}>
+            <Modal.Footer dialogClassName='modal-footer'>
+                <Button className="btn btn-light btn-outline-secondary" variant="secondary" onClick={hideModal}>
                     Close
                 </Button>
-                <Button className="alert-button-save button-alert-box" variant="primary" onClick={() => submitEdit(newTitle, newContent, username, id)}>
+                <Button className="btn btn-success" variant="primary" onClick={() => submitEdit(newTitle, newContent, username, id)}>
                     Save
                 </Button>
             </Modal.Footer>

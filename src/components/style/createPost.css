@@ -8,13 +8,9 @@
   justify-content: flex-end;
 }
 
-.main-title {
-  margin-bottom: 10px;
-}
-
 .input {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .main-label {
@@ -24,9 +20,8 @@
 .main-input {
   border: 1px solid #dddddd;
   border-radius: 5px;
-  height: 20px;
   margin-top: 5px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   width: 510px;
 }
 

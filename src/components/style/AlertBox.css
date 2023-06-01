@@ -1,44 +1,8 @@
-.edit-alert-input {
+.input-alert-box {
   border: 1px solid #dddddd;
   border-radius: 5px;
-  height: 20px;
-  margin-top: 5px;
-  margin-bottom: 12px;
-  width: 450px;
 }
 
-.edit-alert-input::placeholder {
-  color: #cccccc;
-  font-size: small;
-}
-
-.textarea {
-  height: 50px;
-  resize: none;
-}
-
-.button-alert-box {
-  border-radius: 5px;
-  padding: 5px 20px;
-  margin-top: 16px;
-  margin-right: 12px;
-  margin-bottom: 10px;
-}
-
-.alert-button-cancel {
-  background-color: #FFFFFF  !important;
-  border: 1px solid #000000;
-  color: #000000  !important;
-}
-
-.alert-button-save {
-  background-color: #47B960  !important;
-  border: none;
-  color: #ffffff;
-}
-
-.alert-button-delete {
-  background-color: #FF5151 !important;
-  border: none;
-  color: #ffffff;
+.input-alert-box::placeholder {
+  color: #dddddd;
 }

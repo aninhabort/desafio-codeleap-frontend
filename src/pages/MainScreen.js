@@ -30,7 +30,7 @@ const MainScreen = ({ username, handleChange }) => {
 
   const handleClick = () => {
     const id = uuidv4()
-    const post = { title, content, username, id, createdAt: new Date()
+    const post = { title, content, username, id, created_datetime: new Date()
      }
     setPosts(oldPost => [post, ...oldPost])
 
