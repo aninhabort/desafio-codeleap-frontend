@@ -53,11 +53,7 @@ const MainScreen = ({ username, handleChange }) => {
           title:newTitle,
           username,
           content:newContent,
-<<<<<<< HEAD
-          createdAt: new Date()
-=======
           created_datetime: new Date()
->>>>>>> 20b42a22173723010a3724307f8758e9d94d6748
         };
   
         const updatedPosts = [...posts];
