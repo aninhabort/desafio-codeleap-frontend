@@ -37,6 +37,7 @@
 
 .main-input::placeholder {
   color: #cccccc;
+  font-size: small;
 }
 
 .main-button-create {
