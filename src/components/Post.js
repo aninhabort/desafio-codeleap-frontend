@@ -44,7 +44,11 @@ const Post = ({ post, buttons, submitDelete, submitEdit, handleChange }) => {
         <div className="username-and-time">
           <p className="username">@{post.username}</p>
           <p className="time"><ReactTimeAgo
+<<<<<<< HEAD
       date={post.createdAt} locale="en-US" /></p>
+=======
+      date={post.created_datetime} locale="en-US" /></p>
+>>>>>>> 20b42a22173723010a3724307f8758e9d94d6748
         </div>
         <p className="content-post">{post.content}</p>
       </div>
