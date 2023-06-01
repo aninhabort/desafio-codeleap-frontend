@@ -3,6 +3,7 @@ import removeButton from './img/remove.png'
 import editButton from './img/edit.png'
 import DeleteAlert from './DeleteAlert'
 import EditPost from "./EditPost";
+import ReactTimeAgo from "react-time-ago";
 
 import './style/post.css'
 
@@ -42,7 +43,8 @@ const Post = ({ post, time, buttons, submitDelete, submitEdit, handleChange }) =
       <div className="content width">
         <div className="username-and-time">
           <p className="username">@{post.username}</p>
-          <p className="time">{time}</p>
+          <p className="time"><ReactTimeAgo
+      date={post.created_datetime} locale="en-US" /></p>
         </div>
         <p className="content-post">{post.content}</p>
       </div>
