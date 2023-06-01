@@ -1,9 +1,9 @@
 * {
   font-family: "Roboto";
-
 }
 
 body {
+  background-color: #dddddd !important;
   color: black;
 }
 
@@ -12,6 +12,7 @@ body {
   border-radius: 8px;
   display: flex;
   flex-flow: wrap;
+  padding: 20px;
   margin: auto;
   margin-top: 350px;
   width: 350px;
@@ -19,20 +20,18 @@ body {
 }
 
 .login-label {
-  margin: 12px;
   font-size: 15px;
 }
 
 .login-input-username {
   border: 1px solid #dddddd;
   border-radius: 5px;
-  margin-left: 12px;
-  margin-right: 12px;
+  width: 300px;
 }
 
 .login-input-username::placeholder {
   color: #cccccc;
-  font-size: small;
+  padding-left: 5px;
 }
 
 .login-button-enter {
@@ -40,9 +39,8 @@ body {
   border: none;
   border-radius: 5px;
   color: #ffffff;
-  padding: 5px 20px;
+  padding: 5px 15px;
   margin-top: 16px;
-  margin-bottom: 10px;
 }
 
 .login-button-enter:disabled {

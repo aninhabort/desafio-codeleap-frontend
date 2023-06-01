@@ -9,7 +9,7 @@ const CreatePost = ({ handleChange, setTitle, setContent, disabled, handleClick,
         <h4>What’s on your mind?</h4>
         <label className="main-label" htmlFor="title">Title:
           <input
-            className="form-control main-input"
+            className="main-input"
             type="text"
             placeholder="Hello world"
             name="title"
@@ -18,7 +18,7 @@ const CreatePost = ({ handleChange, setTitle, setContent, disabled, handleClick,
           <label className="main-label" htmlFor="content">Content:
             <textarea
               name="content"
-              className="form-control main-input textarea"
+              className="main-input textarea"
               placeholder="Content here"
               onChange={(e) => handleChange(setContent, e)} value={content}></textarea>
           </label>

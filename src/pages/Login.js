@@ -23,13 +23,13 @@ const Login = ({ username, setUsername, handleChange }) => {
   return (
     <body>
       <div className="login">
-        <div>
+        <div className="login-header">
           <h4>Welcome to CodeLeap network!</h4>
           <label className="login-label" htmlFor="username">Please enter your username
           </label>
           <input
             type="text"
-            className="form-control login-input-username"
+            className="login-input-username"
             name="username"
             onChange={(e) => handleChange(setUsername, e)}
             placeholder="John doe"
