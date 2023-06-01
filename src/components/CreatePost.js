@@ -15,7 +15,6 @@ const CreatePost = ({ handleChange, setTitle, setContent, disabled, handleClick,
             name="title"
             onChange={(e) => handleChange(setTitle, e)} value={title}></input>
         </label>
-        <div className="input-group">
           <label className="main-label" htmlFor="content">Content:
             <textarea
               name="content"
@@ -23,7 +22,6 @@ const CreatePost = ({ handleChange, setTitle, setContent, disabled, handleClick,
               placeholder="Content here"
               onChange={(e) => handleChange(setContent, e)} value={content}></textarea>
           </label>
-        </div>
       </div>
       <button className="main-button-create" type="button" disabled={disabled} onClick={handleClick}>Create</button>
     </div>
