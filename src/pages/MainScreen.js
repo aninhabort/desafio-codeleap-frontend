@@ -21,8 +21,7 @@ const MainScreen = ({ username, handleChange }) => {
     notEmpty()
 
     const verifyUsername = () => {
-      const findPostUsername = posts.filter((item) => item.username === username)
-      if (!!findPostUsername) {
+      if (username === posts.username) {
         setButtons(true)
       }
     }
