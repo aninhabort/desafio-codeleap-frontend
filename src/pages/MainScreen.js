@@ -4,11 +4,6 @@ import Post from "../components/Post";
 import { v4 as uuidv4 } from 'uuid';
 
 import './style/mainScreen.css'
-import axios from "axios";
-
-const client = axios.create({
-  baseURL: 'https://dev.codeleap.co.uk/careers/'
-})
 
 const MainScreen = ({ username, handleChange }) => {
   const [title, setTitle] = useState('')
@@ -24,12 +19,6 @@ const MainScreen = ({ username, handleChange }) => {
       }
     }
     notEmpty()
-
-    const fetchPost = async () => {
-      let response = await client.get('?limit=10');
-      setPosts(response.data["results"]);
-    }
-    fetchPost()
 
     const verifyUsername = () => {
       const findPostUsername = posts.filter((item) => item.username === username)
